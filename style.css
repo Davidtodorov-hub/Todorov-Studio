@@ -239,7 +239,7 @@ body {
 }
 
 /* MOBILE */
-@media (max-width: 840px) {
+@media (max-width: 1000px) {
   .services-grid,
   .pricing-grid,
   .portfolio-grid {
