@@ -5,9 +5,10 @@
   --shadow: rgba(0,0,0,0.15);
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
   font-family: Inter, sans-serif;
@@ -54,7 +55,7 @@ body {
 
 /* HERO */
 .hero {
-  padding: 100px 40px 90px;
+  padding: 110px 40px 90px;
   max-width: 1100px;
   margin: auto;
 }
@@ -62,14 +63,15 @@ body {
 .hero h1 {
   font-family: "Playfair Display", serif;
   font-size: 48px;
-  margin-bottom: 20px;
-  line-height: 1.15;
+  margin-bottom: 18px;
+  line-height: 1.2;
 }
 
 .hero p {
-  max-width: 550px;
+  max-width: 560px;
   font-size: 18px;
-  margin-bottom: 32px;
+  margin-bottom: 34px;
+  color: #1c1c1c;
 }
 
 /* BUTTONS */
@@ -91,20 +93,20 @@ body {
   box-shadow: 0px 8px 22px rgba(0,0,0,0.18);
 }
 
-.btn {
+.btn-outline {
   background: transparent;
   border: 2px solid var(--navy);
   color: var(--navy);
   padding: 12px 22px;
 }
 
-.btn:hover {
+.btn-outline:hover {
   background: var(--navy);
   color: white;
   transform: scale(1.06);
 }
 
-/* GENERAL SECTION */
+/* SECTIONS */
 .section {
   max-width: 1100px;
   margin: 80px auto;
@@ -114,14 +116,14 @@ body {
 .section h2 {
   font-family: "Playfair Display", serif;
   font-size: 34px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 /* SERVICES */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 28px;
 }
 
 .service-box {
@@ -129,8 +131,8 @@ body {
   padding: 26px;
   border-radius: 8px;
   border: 1px solid rgba(0,0,0,0.1);
-  font-size: 15px;
   transition: 0.25s;
+  font-size: 15px;
 }
 
 .service-box:hover {
@@ -175,39 +177,47 @@ body {
 .portfolio-section-title {
   font-family: "Playfair Display", serif;
   font-size: 28px;
-  margin: 40px 0 18px;
+  margin: 42px 0 12px;
 }
 
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 26px;
-  margin-top: 20px;
 }
 
 .portfolio-item {
   background: white;
-  padding: 14px;
   border-radius: 10px;
+  overflow: hidden;
+  position: relative;
   border: 1px solid rgba(0,0,0,0.08);
   transition: 0.25s ease;
+}
+
+.portfolio-item img {
+  width: 100%;
+  display: block;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 16px;
+  background: rgba(10, 53, 81, 0.82);
+  color: white;
+  opacity: 0;
+  transition: 0.25s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
 }
 
 .portfolio-item:hover {
   transform: scale(1.03);
   box-shadow: 0px 16px 35px rgba(0,0,0,0.12);
-}
-
-.portfolio-item img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
-
-.portfolio-label {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--navy);
 }
 
 /* CONTACT */
@@ -228,3 +238,23 @@ body {
   opacity: 0.7;
 }
 
+/* MOBILE */
+@media (max-width: 840px) {
+  .services-grid,
+  .pricing-grid,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .nav {
+    padding: 18px 20px;
+  }
+
+  .section {
+    padding: 0 20px;
+  }
+}
